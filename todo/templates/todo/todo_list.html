@@ -1,0 +1,22 @@
+{% if todos %}
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Is completed ? </td>
+    <td>Due Date</td>
+    <td>Notes</td>
+  </tr>
+  {% for todo in todos %}
+  <tr>
+    <td>{{ todo.id }}</td>
+    <td>{{ todo.name }}</td>
+    <td>{{ todo.is_completed }}</td>
+    <td>{{ todo.due_date }}</td>
+    <td>{{ todo.notes }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>No todo items</p>
+{% endif %}

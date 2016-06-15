@@ -1,0 +1,14 @@
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <li>{{message}} </li>
+  {% endfor %}
+</ul>
+{% endif %}
+<ul>
+  <li>Id: {{ todo.id }}</li>
+  <li>Name: {{ todo.name }}</li>
+  <li>Is completed: {{ todo.is_completed }}</li>
+  <li>Due date: {{ todo.due_date }}</li>
+  <li>Notes: {{ todo.notes }}</li>
+</ul>
