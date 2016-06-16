@@ -12,9 +12,17 @@ Workshop focuses on introduction Django to participants.
 - SQLite 3 (Windows users) - https://sqlite.org/download.html
 
 
+### Installation
+
+- `python3 -m venv djdo`
+- `. djdo/bin/activate`
+- `pip install Django`
+
+If you face any issue with `venv` module install `virtualenv` package and create `djdo` virtual environment.
+
 ### Verification
 
-- Clone github repo
+- Clone github repo `https://github.com/kracekumar/djdo`
 - Run `python manage.py runserver`
 - Output should look similar to
 
@@ -33,3 +41,5 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 
 ```
+
+All the content for the workshop is available in develop branch.
