@@ -1,3 +1,4 @@
+{% block content %}
 {% if messages %}
 <ul class="messages">
   {% for message in messages %}
@@ -11,4 +12,6 @@
   <li>Is completed: {{ todo.is_completed }}</li>
   <li>Due date: {{ todo.due_date }}</li>
   <li>Notes: {{ todo.notes }}</li>
+  <li><a href="{% url 'todo_edit' todo.id %}">Edit</a>
 </ul>
+{% endblock %}

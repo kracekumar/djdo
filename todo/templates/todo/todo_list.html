@@ -1,3 +1,12 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <li>{{message}} </li>
+  {% endfor %}
+</ul>
+{% endif %}
 {% if todos %}
 <table>
   <tr>
@@ -6,6 +15,8 @@
     <td>Is completed ? </td>
     <td>Due Date</td>
     <td>Notes</td>
+    <td>Edit</td>
+    <td>Delete</td>
   </tr>
   {% for todo in todos %}
   <tr>
@@ -14,9 +25,13 @@
     <td>{{ todo.is_completed }}</td>
     <td>{{ todo.due_date }}</td>
     <td>{{ todo.notes }}</td>
+    <td><a href="{% url 'todo_edit' todo.id %}">Edit</a>
+    <td><a href="{% url 'todo_delete' todo.id %}">Delete</a>
+    </td>
   </tr>
   {% endfor %}
 </table>
 {% else %}
 <p>No todo items</p>
 {% endif %}
+{% endblock content %}

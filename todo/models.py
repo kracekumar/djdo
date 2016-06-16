@@ -1,5 +1,6 @@
 import datetime
 
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
@@ -14,6 +15,7 @@ class Todo(models.Model):
     notes = models.TextField()
     is_completed = models.BooleanField(db_index=True)
     due_date = models.DateTimeField(default=add_default_due_date)
+    user = models.ForeignKey(User, null=True, blank=True)
 
     def __str__(self):
         return "<id: {}, name: {}, is_completed: {}, due_date: {}>".format(self.id, self.name, self.is_completed, self.due_date)

@@ -1,4 +1,6 @@
-<form action="/todo/new/" method="post">
+{% extends 'todo/base.html' %}
+{% block content %}
+<form action="{{ url }}" method="post">
   {% csrf_token %}
   {% for field in form %}
   <div class="fieldWrapper">
@@ -11,3 +13,4 @@
   {% endfor %}
   <input type="submit" value="Submit" />
 </form>
+{% endblock %}
